@@ -1,0 +1,23 @@
+---
+title: "Birthday Paradox"
+output: html_document
+---
+
+This is an example code for birthday paradox. Probability of 2 or more students having same birthday in a class.
+```{r, echo=TRUE}
+    findsamebirthdays <- function(ndays)
+    {
+      samebdays <- function(n) return (as.numeric(1-prod((365-(n-1))/365)))
+      eventsize <- c(1:ndays)
+      eventslist <- list()
+      for(i in 1:length(eventsize)) eventslist[[i]] <- as.vector(c(1:eventsize[i]))
+      pdfvector <- vector()
+      for(i in 1:length(eventslist)) pdfvector[[i]] <- samebdays(as.vector(eventslist[[i]],mode="integer"))
+      #pdf(file='./Ex2.1.pdf')
+      print(pdfvector[1:25])
+      plot(density(pdfvector))
+      #dev.off()
+    }
+    findsamebirthdays(100)
+```
+
