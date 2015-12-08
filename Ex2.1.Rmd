@@ -4,6 +4,12 @@ output: html_document
 ---
 
 This is an example code for birthday paradox. Probability of 2 or more students having same birthday in a class.
+
+$$
+  \begin(aligned)
+  \
+$$
+
 ```{r, echo=TRUE}
     findsamebirthdays <- function(ndays)
     {
